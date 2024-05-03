@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "TpSalaDeJuegosLab4": {
+    "tp-saladejuegos-lab4-hamer": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -25,6 +25,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/custom-theme.scss",
               "src/styles.css"
             ],
             "scripts": []
@@ -48,7 +49,13 @@
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -57,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "TpSalaDeJuegosLab4:build:production"
+              "buildTarget": "tp-saladejuegos-lab4-hamer:build:production"
             },
             "development": {
-              "buildTarget": "TpSalaDeJuegosLab4:build:development"
+              "buildTarget": "tp-saladejuegos-lab4-hamer:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -68,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "TpSalaDeJuegosLab4:build"
+            "buildTarget": "tp-saladejuegos-lab4-hamer:build"
           }
         },
         "test": {
@@ -84,10 +91,28 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "tp-saladejuegos-lab4-hamer:build:production",
+              "serveTarget": "tp-saladejuegos-lab4-hamer:serve:production"
+            },
+            "development": {
+              "buildTarget": "tp-saladejuegos-lab4-hamer:build:development",
+              "serveTarget": "tp-saladejuegos-lab4-hamer:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

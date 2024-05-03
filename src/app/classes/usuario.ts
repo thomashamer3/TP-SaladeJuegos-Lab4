@@ -1,15 +1,15 @@
 export class Usuario {
-    id: string;
-    nombre: string;
-    email: string;
-    password: string; 
+  email: string;
+  clave: string;
+  nombreUsuario: string;
+  fechaRegistrado: number;
+  rol: string;
 
-    constructor(id: string, nombre: string, email: string, password: string) {
-      this.id = id;
-      this.nombre = nombre;
-      this.email = email;
-      this.password = password;
-    }
-  
+  constructor() {
+    this.nombreUsuario = '';
+    this.email = '';
+    this.clave = '';
+    this.fechaRegistrado = Date.now();
+    this.rol = 'usuario';
   }
-  
+}

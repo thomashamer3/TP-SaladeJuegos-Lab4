@@ -1,0 +1,29 @@
+.background-image {
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+      to top,
+      transparent 10%,
+      rgba(208, 228, 33, 0.5) 50%,
+      rgb(156, 39, 104) 95%
+    ),
+    url("../../../assets/fondo-card.gif");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.content {
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.profile-image {
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}

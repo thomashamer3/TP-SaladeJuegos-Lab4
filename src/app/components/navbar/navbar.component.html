@@ -1,0 +1,36 @@
+<div class="navBar">
+  <button
+    mat-flat-button
+    color="accent"
+    class="large-button"
+    routerLink="/home"
+  >
+    Inicio
+  </button>
+  <button
+    mat-flat-button
+    color="accent"
+    class="large-button"
+    routerLink="/login"
+    *ngIf="!authService.bool"
+  >
+    Login
+  </button>
+  <button
+    mat-flat-button
+    color="accent"
+    class="large-button"
+    *ngIf="authService.bool"
+    (click)="salir()"
+  >
+    LogOut
+  </button>
+  <button
+    mat-flat-button
+    color="accent"
+    class="large-button"
+    routerLink="/quien-soy"
+  >
+    Quien soy
+  </button>
+</div>

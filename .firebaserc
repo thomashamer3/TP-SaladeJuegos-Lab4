@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "tpsaladejuegoslab4hamer-8ec28"
+  },
+  "targets": {
+    "tpsaladejuegoslab4hamer-8ec28": {
+      "hosting": {
+        "tp-saladejuegos-lab4-hamer": [
+          "tpsaladejuegoslab4hamer-8ec28"
+        ]
+      }
+    }
   }
 }
